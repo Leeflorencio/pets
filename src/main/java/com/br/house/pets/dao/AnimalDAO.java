@@ -2,6 +2,7 @@ package com.br.house.pets.dao;
 
 import com.br.house.pets.ConnectionFactory;
 import com.br.house.pets.dto.Animal;
+import com.br.house.pets.dto.Endereco;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
