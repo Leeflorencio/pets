@@ -6,6 +6,7 @@ import com.br.house.pets.enums.StatusAdocao;
 public class Animal {
 
     private Long id;
+    private String nome;
     private String tipo;
     private String raca;
     private Integer idade;
@@ -13,8 +14,9 @@ public class Animal {
     private double peso;
     private StatusAdocao statusAdocao;
 
-    public Animal(Long id, String tipo, String raca, Integer idade, PetSexo sexo, double peso, StatusAdocao statusAdocao) {
+    public Animal(Long id, String nome, String tipo, String raca, Integer idade, PetSexo sexo, double peso, StatusAdocao statusAdocao) {
         this.id = id;
+        this.nome = nome;
         this.tipo = tipo;
         this.raca = raca;
         this.idade = idade;
@@ -23,8 +25,21 @@ public class Animal {
         this.statusAdocao = statusAdocao;
     }
 
+    public Animal(){}
+
+    public Animal(String nome, String tipo, String raca, int idade, PetSexo sexo, double peso, StatusAdocao statusAdocao) {
+    }
+
     public Long getId() {
         return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public void setId(Long id) {
@@ -83,12 +98,13 @@ public class Animal {
     public String toString() {
         return "Animal{" +
                 "id=" + id +
+                ", nome='" + nome + '\'' +
                 ", tipo='" + tipo + '\'' +
                 ", raca='" + raca + '\'' +
                 ", idade=" + idade +
                 ", sexo=" + sexo +
                 ", peso=" + peso +
-                ", statusAdocao=" + statusAdocao +
-                '}';
+                ", statusAdocao=" + statusAdocao +                '}';
     }
+
 }

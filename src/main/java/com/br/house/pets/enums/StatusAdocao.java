@@ -4,5 +4,5 @@ public enum StatusAdocao {
 
     ADOTADO,
     EM_ANALISE,
-
+    DISPONIVEL
 }
