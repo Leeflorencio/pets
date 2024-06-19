@@ -5,7 +5,10 @@ import com.br.house.pets.dto.Endereco;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashSet;
+import java.util.Set;
 
 public class EnderecoDAO {
     private Connection conn;
@@ -36,6 +39,37 @@ public class EnderecoDAO {
         }catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
 
+    public Set<Endereco> listarTodos(){
+
+        ResultSet resultSet;
+        Set<Endereco> enderecos = new HashSet<>();
+        String sql = "SELECT rua, numero, complemento, bairro, cidade, estado, cep FROM endereco";
+
+        try{
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+
+                String rua = resultSet.getString(1);
+                int numero = resultSet.getInt(2);
+                String complemento = resultSet.getString(3);
+                String bairro = resultSet.getString(4);
+                String cidade = resultSet.getString(5);
+                String estado = resultSet.getString(6);
+                String cep = resultSet.getString(7);
+
+                enderecos.add(new Endereco(rua, numero, complemento, bairro, cidade, estado, cep));
+            }
+            resultSet.close();
+            preparedStatement.execute();
+            preparedStatement.close();
+
+        }catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return enderecos;
     }
 }

@@ -7,6 +7,7 @@ import com.br.house.pets.dto.Animal;
 import com.br.house.pets.dto.Endereco;
 
 import java.sql.Connection;
+import java.util.Set;
 
 public class EnderecoService {
 
@@ -20,5 +21,10 @@ public class EnderecoService {
     public void cadastrarEndereco(Endereco endereco){
         Connection conn = connectionFactory.recuperarConexao();
         new EnderecoDAO(conn, connectionFactory).cadastrarEndereco(endereco);
+    }
+
+    public Set<Endereco> listarTodos() {
+        Connection conn = connectionFactory.recuperarConexao();
+        return new EnderecoDAO(conn, connectionFactory).listarTodos();
     }
 }

@@ -18,8 +18,8 @@ public class PetsEndereco {
 
         System.out.println("Bem vindo ao sistema de cadastro de Endereços da House Pets. \n Escolha uma opção:\n");
 
-        System.out.println(" 1 - Cadastro \n 2 - Listar todos os pets \n 3 - Buscar pet por nome " +
-                "\n 4 - Excluir pet \n 5 - Atualizar cadastro pet");
+        System.out.println(" 1 - Cadastro \n 2 - Listar todos os endereços \n 3 - Buscar endereços por nome " +
+                "\n 4 - Excluir endereço \n 5 - Atualizar endereço");
 
 
         int opcao = 0;
@@ -30,7 +30,7 @@ public class PetsEndereco {
                 cadastrarEndereco();
                 break;
             case 2:
-                //listarTodos();
+                listarTodos();
                 break;
         }
 
@@ -66,5 +66,11 @@ public class PetsEndereco {
         }catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+    private static void listarTodos(){
+
+        var enderecos = enderecoService.listarTodos();
+        enderecos.stream().forEach(System.out::println);
     }
 }

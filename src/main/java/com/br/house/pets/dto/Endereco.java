@@ -80,14 +80,14 @@ public class Endereco {
 
     @Override
     public String toString() {
-        return "Endereco{" +
-                "rua='" + rua + '\'' +
-                ", numero=" + numero +
-                ", complemento='" + complemento + '\'' +
-                ", bairro='" + bairro + '\'' +
-                ", cidade='" + cidade + '\'' +
-                ", estado='" + estado + '\'' +
-                ", cep='" + cep + '\'' +
-                '}';
+        return "Endereco {" +
+                "\n    Rua:  " + rua +
+                "\n    Número: " + numero +
+                "\n    Complemento: " + complemento +
+                "\n    Bairro: " + bairro +
+                "\n    Cidade: " + cidade +
+                "\n    Estado: " + estado +
+                "\n    CEP:  " + cep +
+                "\n}";
     }
 }
