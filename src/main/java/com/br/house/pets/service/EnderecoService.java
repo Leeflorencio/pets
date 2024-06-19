@@ -27,4 +27,9 @@ public class EnderecoService {
         Connection conn = connectionFactory.recuperarConexao();
         return new EnderecoDAO(conn, connectionFactory).listarTodos();
     }
+
+    public Endereco buscarEndereco(String rua){
+        Connection conn = connectionFactory.recuperarConexao();
+        return new EnderecoDAO(conn, connectionFactory).buscarEnderecoPorNome(rua);
+    }
 }

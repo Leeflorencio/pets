@@ -1,6 +1,5 @@
 package com.br.house.pets;
 
-import com.br.house.pets.dto.Animal;
 import com.br.house.pets.dto.Endereco;
 import com.br.house.pets.service.EnderecoService;
 
@@ -32,12 +31,15 @@ public class PetsEndereco {
             case 2:
                 listarTodos();
                 break;
+            case 3:
+                buscarEnderecoPorNome();
+                break;
+
         }
 
     }
 
     private static void cadastrarEndereco(){
-        //rua, numero, complemento, bairro, cidade, estado, cep
         try {
             System.out.println("Informe a Rua: ");
             var rua = sc.next();
@@ -72,5 +74,19 @@ public class PetsEndereco {
 
         var enderecos = enderecoService.listarTodos();
         enderecos.stream().forEach(System.out::println);
+    }
+
+    private static void buscarEnderecoPorNome(){
+
+        try {
+            System.out.println("Informe o nome da rua: ");
+            var rua = sc.next();
+
+            Endereco endereco = enderecoService.buscarEndereco(rua);
+            System.out.println(endereco);
+
+        }catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }
