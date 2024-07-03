@@ -73,16 +73,17 @@ public class EnderecoDAO {
         return enderecos;
     }
 
+
     public Endereco buscarEnderecoPorNome(String nomeRua) {
 
-        String sql = "SELECT rua, numero, complemento, bairro, cidade, estado, cep FROM endereco WHERE rua = ?";
+        String sql = "SELECT rua, numero, complemento, bairro, cidade, estado, cep FROM endereco WHERE rua LIKE ?";
 
         ResultSet resultSet;
         Endereco endereco = null;
 
         try {
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(1, nomeRua);
+            preparedStatement.setString(1, "%" + nomeRua + "%");
             resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {

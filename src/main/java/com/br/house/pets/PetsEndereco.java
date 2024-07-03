@@ -34,7 +34,8 @@ public class PetsEndereco {
             case 3:
                 buscarEnderecoPorNome();
                 break;
-
+            case 4:
+                //excluirEndereco();
         }
 
     }

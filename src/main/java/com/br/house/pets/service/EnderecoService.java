@@ -32,4 +32,6 @@ public class EnderecoService {
         Connection conn = connectionFactory.recuperarConexao();
         return new EnderecoDAO(conn, connectionFactory).buscarEnderecoPorNome(rua);
     }
+
+    //public void excluirEndereco()
 }
