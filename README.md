@@ -7,11 +7,10 @@ acompanhamento de suas adoções por novas famílias. O sistema também ajudará
 
 ## Features
 
-- Cadastro de Pets
-Permitir o cadastro de novos pets, incluindo informações como nome, tipo, raça, idade, sexo, peso e status de adoção.
+- Cadastro de Pets: Permitir o cadastro de novos pets, incluindo informações como nome, tipo, raça, idade, sexo, peso e status de adoção.
 
-- Cadastro de Pessoas
-Permitir o cadastro de pessoas interessadas em adotar pets, com informações como nome, CPF, telefone, email e endereço.
+- Cadastro de Pessoas: Permitir o cadastro de pessoas interessadas em adotar pets, com informações como nome, CPF, telefone, email e endereço.
 
-- Registro de Adoções
-Registrar adoções, associando pets a adotantes e registrando a data da adoção e quaisquer observações relevantes.
+- Registro de Adoções: Registrar adoções, associando pets a adotantes e registrando a data da adoção e quaisquer observações relevantes.
+
+- Gerenciamento de Endereços: Manter informações detalhadas dos endereços das pessoas responsáveis pelas adoções. 
